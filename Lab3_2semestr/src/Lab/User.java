@@ -6,6 +6,9 @@ public class User {
         abstractImedg.getImg("sky",1,1);
         System.out.println("////////");
         abstractImedg.getImg("sky",1,1);
+        System.out.println("////////");
+        abstractImedg.getImg("sky",2,1);
+
     }
 
 

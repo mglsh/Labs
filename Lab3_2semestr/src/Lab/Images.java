@@ -1,6 +1,11 @@
 package Lab;
 
 public class Images extends AbstractImedg {
+
+    int nanberOfArrayColor = 0;
+    int namberOfArrayImages = 0;
+    int countImages= 2;
+
     private ImagesArray[] imagesArrays = new ImagesArray[2];
     int count=2;
 
@@ -41,6 +46,31 @@ public class Images extends AbstractImedg {
 
     @Override
     public void getImg(String name, int x, int y) {
-
+        if (checkSavedImages(name)){
+            System.out.println("Ім'я "+ imagesArrays[nanberOfArrayColor].getName() +"Колір картинки " + imagesArrays[namberOfArrayImages].getPikche()[x][y]);
+        }else {
+            System.out.println("Такіх данних не має");
+        }
     }
+
+
+
+    private boolean checkSavedImages(String name){
+        boolean flag = false;
+        if (countImages ==0){
+            flag=false;
+        }else {
+            for (int i = 0; i < countImages; i++) {
+                if (imagesArrays[i].getName().equals(name)){
+                    flag = true;
+                    namberOfArrayImages = i;
+                    return true;
+                }else {
+                    flag = false;
+                }
+            }
+        }
+        return flag;
+    }
+
 }
