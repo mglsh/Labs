@@ -17,16 +17,15 @@ public class ProxiCash extends AbstractImedg {
             System.out.println("На проксі збереженого кольру немає");
             if (checkSavedImages(name)){
                 System.out.println("На проксі є картинка колір дам з неї. Ім'я картинки "+cashImagesArrays[namberOfArrayImages].getName()+ " Колір картинки " + cashImagesArrays[namberOfArrayImages].getPikche()[x][y]);
-            }else {
+            }else if (!(images.winningThePicture(name)==null)){
                 saveImages(name);
                 System.out.println("На проксі не має картинки ми її загружаєм з Images");
                 checkSavedImages(name);
                 System.out.println("Даємо колір з картинки яку загрузили на проксі Назва картинки "+cashImagesArrays[namberOfArrayImages].getName()+ " Колір картинки " + cashImagesArrays[namberOfArrayImages].getPikche()[x][y]);
                 saveColor(name,x,y);
+            }else {
+                System.out.println("Такіх данних не має на сайті");
             }
-
-
-               
         }
 
 
